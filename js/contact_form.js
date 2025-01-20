@@ -1,17 +1,18 @@
-$(document).ready(function(){
+const jQuery = $;
+jQuery(document).ready(function(){
 	// Contact Form Submition
 	function checkRequire(formId , targetResp){
 		targetResp.html('');
-		var email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-		var url = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/;
-		var image = /\.(jpe?g|gif|png|PNG|JPE?G)$/;
-		var mobile = /^[\s()+-]*([0-9][\s()+-]*){6,20}$/;
-		var facebook = /^(https?:\/\/)?(www\.)?facebook.com\/[a-zA-Z0-9(\.\?)?]/;
-		var twitter = /^(https?:\/\/)?(www\.)?twitter.com\/[a-zA-Z0-9(\.\?)?]/;
-		var google_plus = /^(https?:\/\/)?(www\.)?plus.google.com\/[a-zA-Z0-9(\.\?)?]/;
-		var check = 0;
+		const email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+		const url = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/;
+		const image = /\.(jpe?g|gif|png|PNG|JPE?G)$/;
+		const mobile = /^[\s()+-]*([0-9][\s()+-]*){6,20}$/;
+		const facebook = /^(https?:\/\/)?(www\.)?facebook.com\/[a-zA-Z0-9(\.\?)?]/;
+		const twitter = /^(https?:\/\/)?(www\.)?twitter.com\/[a-zA-Z0-9(\.\?)?]/;
+		const google_plus = /^(https?:\/\/)?(www\.)?plus.google.com\/[a-zA-Z0-9(\.\?)?]/;
+		let check = 0;
 		$('#er_msg').remove();
-		var target = (typeof formId == 'object')? $(formId):$('#'+formId);
+		let target = (typeof formId == 'object')? $(formId):$('#'+formId);
 		target.find('input , textarea , select').each(function(){
 			if($(this).hasClass('require')){
 				if($(this).val().trim() == ''){
@@ -41,34 +42,34 @@ $(document).ready(function(){
 		});
 		return check;
 	}
-	$(".submitForm").on("click", function() {
+
+
+	jQuery(".submitForm").on("click", function() {
 		const _this = $(this);
 		const targetForm = _this.closest('form');
 		const errroTarget = targetForm.find('.response');
 		const check = checkRequire(targetForm , errroTarget);
-		if(check == 0){
 
+		const afterSuccessSubmit = () => {
+			targetForm.find('input').val('');
+			targetForm.find('textarea').val('');
+			errroTarget.html('<p style="color:green;">Mail has been sent successfully.</p>');
+		}
+		if(check == 0){
 			const formDetail = new FormData(targetForm[0]);
 			const formObject = Object.fromEntries(formDetail.entries());
 
-			console.log(formObject)
-
-			$.ajax({
+			jQuery.ajax({
 				method : 'post',
-				url : 'https://docs.google.com/forms/d/e/1aR4BAEz-m2AagGLZvmlt37S7xUhw1vn_5l3g4_4oGOM/formResponse',
+				url : 'https://docs.google.com/forms/d/e/1FAIpQLSfcBzwdsgSe4R54kJeBX7cbeuKUusL3pzjlvJaBThy3mMWwlA/formResponse',
 				data:formObject,
-				contentType: 'application/x-www-form-urlencoded',  // Використовуйте цей тип контенту
-				processData: true  // Дозволяє jQuery обробити дані
+				contentType: 'application/x-www-form-urlencoded',
+				processData: true,  // Дозволяє jQuery обробити дані
+				error: afterSuccessSubmit
 			}).done(function(resp){
-				console.log(resp);
-				if(resp == 1){
-					targetForm.find('input').val('');
-					targetForm.find('textarea').val('');
-					errroTarget.html('<p style="color:green;">Mail has been sent successfully.</p>');
-				}else{
-					errroTarget.html('<p style="color:red;">Something went wrong please try again later.</p>');
-				}
-			});
+				console.log(errroTarget);
+				afterSuccessSubmit()
+			})
 		}
 	});
 });

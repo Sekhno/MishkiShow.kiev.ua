@@ -317,6 +317,20 @@
 		opacity: 1;
 	}
 
+	.kid_slider_wrapper .carousel-inner .carousel-item .carousel-captions .content li {
+		float: none;
+		display: inline-block;
+	}
+
+	.kid_header_btn {
+		float: none;
+	}
+
+	.kid_header_btn.kid_slider_btn ul {
+		text-align: center;
+	}
+
+
 }
 
 @media (max-width: 580px) {
