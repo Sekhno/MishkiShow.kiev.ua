@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?amts52');
+  src:  url('fonts/icomoon.eot?amts52#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?amts52') format('truetype'),
+    url('fonts/icomoon.woff?amts52') format('woff'),
+    url('fonts/icomoon.svg?amts52#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-foto-svgrepo-com:before {
+  content: "\e900";
+}
+.icon-surprised-man-svgrepo-com:before {
+  content: "\e901";
+}
+.icon-girl-in-front-of-a-fountain-svgrepo-com:before {
+  content: "\e902";
+}
+.icon-child-birthday-svgrepo-com:before {
+  content: "\e903";
+}
+.icon-celebrate-svgrepo-com:before {
+  content: "\e904";
+}
+.icon-child-svgrepo-com:before {
+  content: "\e905";
+}
+.icon-wedding-relationships-couple-marry-svgrepo-com:before {
+  content: "\e906";
+}
+.icon-flower-svgrepo-com:before {
+  content: "\e907";
+}
+.icon-birthday-cake:before {
+  content: "\e908";
+}
