@@ -47,15 +47,15 @@ jQuery(document).ready(function(){
 	jQuery(".submitForm").on("click", function() {
 		const _this = $(this);
 		const targetForm = _this.closest('form');
-		const errroTarget = targetForm.find('.response');
-		const check = checkRequire(targetForm , errroTarget);
+		const errorTarget = targetForm.find('.response');
+		const check = checkRequire(targetForm , errorTarget);
 
 		const afterSuccessSubmit = () => {
 			targetForm.find('input').val('');
 			targetForm.find('textarea').val('');
-			errroTarget.html('<p style="color:green;">Mail has been sent successfully.</p>');
+			errorTarget.html('<p style="color:green;">Mail has been sent successfully.</p>');
 		}
-		if(check == 0){
+		if(check === 0){
 			const formDetail = new FormData(targetForm[0]);
 			const formObject = Object.fromEntries(formDetail.entries());
 
@@ -67,7 +67,6 @@ jQuery(document).ready(function(){
 				processData: true,  // Дозволяє jQuery обробити дані
 				error: afterSuccessSubmit
 			}).done(function(resp){
-				console.log(errroTarget);
 				afterSuccessSubmit()
 			})
 		}
