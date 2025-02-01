@@ -758,7 +758,7 @@ textarea:focus {
 	font-weight: 500;
 	margin: 0 0 20px;
 	animation-delay: 1.2s;
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 	line-height: 52px;
 }
 .kid_slider_wrapper .carousel-inner .carousel-item .carousel-captions .content h2 span {
@@ -928,11 +928,11 @@ textarea:focus {
 .kid_process_box_wrapper h1 a {
 	font-size: 20px;
 	font-weight: 500;
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 	padding-bottom: 15px;
 }
 .kid_process_box_wrapper a {
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 	font-size: 16px;
 	color: #333;
 	display: block;
