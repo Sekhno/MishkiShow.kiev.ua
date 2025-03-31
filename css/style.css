@@ -758,7 +758,7 @@ textarea:focus {
 	font-weight: 500;
 	margin: 0 0 20px;
 	animation-delay: 1.2s;
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 	line-height: 52px;
 }
 .kid_slider_wrapper .carousel-inner .carousel-item .carousel-captions .content h2 span {
@@ -830,6 +830,11 @@ textarea:focus {
 	z-index: 1;
 	left: 395px;
 }
+.kid_slider_wrapper .carousel-nevigation svg {
+	width: 100%; height: 100%;
+	color: white;
+	fill: currentColor;
+}
 .kid_slider_wrapper .carousel-nevigation > .prev {
 	left: 0;
 	position: absolute;
@@ -888,10 +893,15 @@ textarea:focus {
 	color: #f6469e;
 	background: transparent;
 }
-.kid_slider_wrapper .carousel-nevigation > .next i:before,
-.kid_slider_wrapper .carousel-nevigation > .prev i:before {
-	font-size: 19px;
+.kid_slider_wrapper .carousel-nevigation > .next:hover svg,
+.kid_slider_wrapper .carousel-nevigation > .prev:hover svg {
+	color: #f6469e;
+	fill: currentColor;
 }
+/*.kid_slider_wrapper .carousel-nevigation > .next i:before,*/
+/*.kid_slider_wrapper .carousel-nevigation > .prev i:before {*/
+/*	font-size: 19px;*/
+/*}*/
 .kid_slider_wrapper .carousel-inner {
 	overflow: visible;
 }
@@ -928,11 +938,11 @@ textarea:focus {
 .kid_process_box_wrapper h1 a {
 	font-size: 20px;
 	font-weight: 500;
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 	padding-bottom: 15px;
 }
 .kid_process_box_wrapper a {
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 	font-size: 16px;
 	color: #333;
 	display: block;
@@ -959,7 +969,7 @@ textarea:focus {
 	width: 100px;
 	height: 100px;
 	display: inline-block;
-	line-height: 114px;
+	line-height: 94px;
 	margin: 20px 0 30px 0;
 	border-radius: 100%;
 	text-align: center;
@@ -969,6 +979,12 @@ textarea:focus {
 	-ms-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	transition: all 0.5s;
+}
+.kid_process_icon_wrapper svg {
+	width: 44px; height: 44px;
+}
+.kid_process_icon_wrapper svg image {
+	width: inherit; height: inherit;
 }
 .kid_process_line_shape {
 	position: absolute;
@@ -1214,13 +1230,19 @@ textarea:focus {
 .kid_services_icon_wraper i {
 	width: 55px;
 	height: 55px;
-	line-height: 57px;
+	line-height: 52px;
 	background: #f6469e;
 	text-align: center;
 	color: #fff;
 	float: left;
 	border-radius: 100px;
 	display: inline-block;
+}
+.kid_services_icon_wraper svg {
+	width: 34px; height: 34px;
+}
+.kid_services_icon_wraper svg image{
+	width: inherit; height: inherit;
 }
 .kid_services_icon_wraper i:before {
 	text-align: center;
