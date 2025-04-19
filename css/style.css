@@ -511,7 +511,7 @@ textarea:focus {
 #kid_toggle {
 	float: right;
 	width: auto;
-	padding-top: 5px;
+	padding-top: 8px;
 	cursor: pointer;
 }
 #kid_toggle a i:before {
