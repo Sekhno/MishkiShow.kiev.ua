@@ -5,9 +5,26 @@
     <title>Title</title>
 </head>
 <body style="overflow: hidden">
-  <video class="video-item" width="300"  src="../video/IMG_7328.webm" crossorigin=""
-       autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"
+<!--  <video class="video-item" width="300"  src="../video/IMG_7328.webm" crossorigin=""-->
+<!--       autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"-->
+<!--       style="mask-image: url('../images/svg/Vector.svg');"-->
+<!--  ></video>-->
+<video class="video-item" id="video" width="360" controls muted autoplay playsinline loop
        style="mask-image: url('../images/svg/Vector.svg');"
-  ></video>
+></video>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+    const video = document.getElementById('video');
+    const videoSrc = '/video/4/output.m3u8';
+
+    if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+    }
+</script>
 </body>
 </html>
